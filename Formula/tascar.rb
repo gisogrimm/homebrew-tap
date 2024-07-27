@@ -13,7 +13,7 @@ class Tascar < Formula
   depends_on "gtkmm3"
   depends_on "gtksourceviewmm3"
   depends_on "jack"
-  depends_on "labstreaminglayer/tap/lsl"
+  #depends_on "labstreaminglayer/tap/lsl"
   depends_on "liblo"
   depends_on "libltc"
   depends_on "libmatio"
