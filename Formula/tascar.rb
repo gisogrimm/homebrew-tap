@@ -1,5 +1,5 @@
 class Tascar < Formula
-  TASCAR_TAG = "brewdev_0.232.2"
+  TASCAR_TAG = "brewdev_0.232.2_a"
   desc "Toolbox for Acoustic Scene Creation and Rendering (tascar)"
   homepage "https://tascar.org/"
   url "https://github.com/gisogrimm/tascar", :using => :git, :tag => TASCAR_TAG
@@ -32,6 +32,6 @@ class Tascar < Formula
   depends_on "xerces-c"
 
   def install
-    system "HOMEBREW_TASCAR_TAG=#{TASCAR_TAG} make PREFIX=#{prefix} homebrew"
+    system "HOMEBREW_TASCAR_TAG=#{TASCAR_TAG} make -j `nproc` PREFIX=#{prefix} homebrew"
   end
 end
