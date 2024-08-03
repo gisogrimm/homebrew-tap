@@ -1,5 +1,5 @@
 class Tascar < Formula
-  TASCAR_TAG = "brewdev_0.232.2_b"
+  TASCAR_TAG = "brewdev_0.232.2_c"
   desc "Toolbox for Acoustic Scene Creation and Rendering (tascar)"
   homepage "https://tascar.org/"
   url "https://github.com/gisogrimm/tascar", :using => :git, :tag => TASCAR_TAG
