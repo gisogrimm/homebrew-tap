@@ -1,5 +1,5 @@
 class Ovbox < Formula
-  OVBOX_TAG = "v0.25.1_brewdev2"
+  OVBOX_TAG = "v0.25.1_brewdev3"
   desc "ORLANDOviols consort box remote music collaboration software (OVBOX)"
   homepage "https://ovbox.de/"
   url "https://github.com/gisogrimm/ov-client", :using => :git, :tag => OVBOX_TAG
@@ -25,6 +25,7 @@ class Ovbox < Formula
   depends_on "libmatio"
   depends_on "libsamplerate"
   depends_on "libsndfile"
+  depends_on "node"
   depends_on "make" => :build
   depends_on "pkgconfig" => :build
   depends_on "qjackctl" => :recommended
