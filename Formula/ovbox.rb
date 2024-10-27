@@ -1,5 +1,5 @@
 class Ovbox < Formula
-  OVBOX_TAG = "v0.25.1_brewdev5"
+  OVBOX_TAG = "v0.25.1_brewdev6"
   desc "ORLANDOviols consort box remote music collaboration software (OVBOX)"
   homepage "https://ovbox.de/"
   url "https://github.com/gisogrimm/ov-client", :using => :git, :tag => OVBOX_TAG
@@ -33,6 +33,6 @@ class Ovbox < Formula
   depends_on "xerces-c"
 
   def install
-    system "HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} make CXXFLAGS+=-DHOMEBREW_OVBOX_TAG=#{OVBOX_TAG} -j `nproc` PREFIX=#{prefix} homebrew"
+    system "HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} make HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} -j `nproc` PREFIX=#{prefix} homebrew"
   end
 end
