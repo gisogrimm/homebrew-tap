@@ -1,0 +1,21 @@
+name: MacOS make
+
+on:
+  push:
+    branches: [ master, development ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: fetchall
+      run: git fetch --unshallow --tags
+    - name: installation
+      run: brew install gisogrimm/tap/tascar gisogrimm/tap/ovbox
+    - name: tascarversion
+      run: tascar_version
+    - name: ovboxversion
+      run: ovbox_version
