@@ -10,6 +10,7 @@ class Ovbox < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "coreutils" => :build # needed for the "realpath" command
+  depends_on "cpprestsdk"
   depends_on "cunit"
   depends_on "curl"
   depends_on "eigen"
@@ -37,6 +38,6 @@ class Ovbox < Formula
   depends_on "xerces-c"
 
   def install
-    system "SHELL=/bin/zsh HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} make HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} -j `nproc` PREFIX=#{prefix} homebrew"
+    system "HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} make SHELL=/bin/zsh HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} -j `nproc` PREFIX=#{prefix} homebrew"
   end
 end
