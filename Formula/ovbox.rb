@@ -26,6 +26,7 @@ class Ovbox < Formula
   depends_on "libmatio"
   depends_on "libsamplerate"
   depends_on "libsndfile"
+  depends_on "libsoundio"
   depends_on "make" => :build
   depends_on "nlohmann-json"
   depends_on "node"
