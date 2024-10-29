@@ -1,0 +1,19 @@
+name: TASCAR
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: fetchall
+      run: git fetch --unshallow --tags
+    - name: installation
+      run: brew install -v gisogrimm/tap/tascar
+    - name: tascarversion
+      run: tascar_version

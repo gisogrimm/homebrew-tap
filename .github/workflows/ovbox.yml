@@ -1,4 +1,4 @@
-name: MacOS make
+name: OVBOX
 
 on:
   push:
@@ -14,8 +14,6 @@ jobs:
     - name: fetchall
       run: git fetch --unshallow --tags
     - name: installation
-      run: brew install gisogrimm/tap/tascar gisogrimm/tap/ovbox
-    - name: tascarversion
-      run: tascar_version
+      run: brew install -v gisogrimm/tap/ovbox
     - name: ovboxversion
       run: ovbox_version
