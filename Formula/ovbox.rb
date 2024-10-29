@@ -11,6 +11,7 @@ class Ovbox < Formula
   depends_on "cmake" => :build
   depends_on "coreutils" => :build # needed for the "realpath" command
   depends_on "cunit"
+  depends_on "curl"
   depends_on "eigen"
   depends_on "fftw"
   depends_on "glibmm"
@@ -25,8 +26,10 @@ class Ovbox < Formula
   depends_on "libmatio"
   depends_on "libsamplerate"
   depends_on "libsndfile"
-  depends_on "node"
   depends_on "make" => :build
+  depends_on "nlohmann-json"
+  depends_on "node"
+  depends_on "openssl"
   depends_on "pkgconfig" => :build
   depends_on "qjackctl" => :recommended
   depends_on "vim" => :build
