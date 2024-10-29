@@ -37,6 +37,6 @@ class Ovbox < Formula
   depends_on "xerces-c"
 
   def install
-    system "HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} make HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} -j `nproc` PREFIX=#{prefix} homebrew"
+    system "SHELL=/bin/zsh HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} make HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} -j `nproc` PREFIX=#{prefix} homebrew"
   end
 end
