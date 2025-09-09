@@ -13,6 +13,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: fetchall
       run: git fetch --unshallow --tags
+    - name: github-cmake workaround
+      run: brew uninstall cmake
     - name: installation
       run: brew install -v gisogrimm/tap/ovbox
     - name: ovboxversion
