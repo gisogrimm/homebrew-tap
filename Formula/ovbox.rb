@@ -1,5 +1,5 @@
 class Ovbox < Formula
-  OVBOX_TAG = "pre_0.31.8"
+  OVBOX_TAG = "pre_0.31.9"
   desc "ORLANDOviols consort box remote music collaboration software (OVBOX)"
   homepage "https://ovbox.de/"
   url "https://github.com/gisogrimm/ov-client", :using => :git, :tag => OVBOX_TAG
