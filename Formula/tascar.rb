@@ -1,5 +1,5 @@
 class Tascar < Formula
-  TASCAR_TAG = "release_0.237.1"
+  TASCAR_TAG = "r0.237.1_macos_app_0"
   desc "Toolbox for Acoustic Scene Creation and Rendering (tascar)"
   homepage "https://tascar.org/"
   url "https://github.com/gisogrimm/tascar", :using => :git, :tag => TASCAR_TAG
@@ -32,6 +32,20 @@ class Tascar < Formula
   depends_on "xerces-c"
 
   def install
-    system "HOMEBREW_TASCAR_TAG=#{TASCAR_TAG} make -j `nproc` PREFIX=#{prefix} homebrew"
+    system "HOMEBREW_TASCAR_TAG=#{TASCAR_TAG} make -j $(nproc) PREFIX=#{prefix} homebrew"
+
+    prefix.install "packaging/homebrew/tascar.app"
+  end
+
+  def post_install
+    # Manually create a symlink in /Applications pointing to the installed .app
+    app = prefix/"tascar.app"
+    target = Pathname("/Applications").children.first / app.basename
+
+    # Remove existing link if it exists (to fix upgrades)
+    target.delete if target.exist? || target.symlink?
+
+    # Create the relative symlink
+    ln_sf app, target
   end
 end
