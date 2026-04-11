@@ -1,5 +1,5 @@
 class Ovbox < Formula
-  OVBOX_TAG = "v0.31.39"
+  OVBOX_TAG = "v0.31.40_macos_app"
   desc "ORLANDOviols consort box remote music collaboration software (OVBOX)"
   homepage "https://ovbox.de/"
   url "https://github.com/gisogrimm/ov-client", :using => :git, :tag => OVBOX_TAG
@@ -40,5 +40,8 @@ class Ovbox < Formula
 
   def install
     system "HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} make SHELL=/bin/zsh HOMEBREW_OVBOX_TAG=#{OVBOX_TAG} -j `nproc` PREFIX=#{prefix} homebrew"
+
+    prefix.install "packaging/homebrew/ovbox.app"
+    
   end
 end
