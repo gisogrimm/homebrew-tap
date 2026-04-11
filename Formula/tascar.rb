@@ -43,9 +43,9 @@ class Tascar < Formula
     target = Pathname.new("/Applications/tascar.app")
 
     # Remove existing link if it exists (to fix upgrades)
-    target.delete if target.exist? || target.symlink?
+    target.rmtree if target.exist? || target.symlink?
 
     # Create the relative symlink
-    ln_sf app, target
+    FileUtils.cp_r app, target
   end
 end
