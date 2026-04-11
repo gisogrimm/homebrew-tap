@@ -40,7 +40,7 @@ class Tascar < Formula
   def post_install
     # Manually create a symlink in /Applications pointing to the installed .app
     app = prefix/"tascar.app"
-    target = "/Applications/tascar.app"
+    target = Pathname.new("/Applications/tascar.app")
 
     # Remove existing link if it exists (to fix upgrades)
     target.delete if target.exist? || target.symlink?
