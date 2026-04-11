@@ -35,17 +35,12 @@ class Tascar < Formula
     system "HOMEBREW_TASCAR_TAG=#{TASCAR_TAG} make -j $(nproc) PREFIX=#{prefix} homebrew"
 
     prefix.install "packaging/homebrew/tascar.app"
-  end
 
-  def post_install
-    # Manually create a symlink in /Applications pointing to the installed .app
+    # install to /Applications
     app = prefix/"tascar.app"
     target = Pathname.new("/Applications/tascar.app")
 
-    # Remove existing link if it exists (to fix upgrades)
-    target.rmtree if target.exist? || target.symlink?
-
     # Create the relative symlink
-    FileUtils.cp_r app, target
+    ln_sf app, target
   end
 end
