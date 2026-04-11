@@ -36,11 +36,5 @@ class Tascar < Formula
 
     prefix.install "packaging/homebrew/tascar.app"
 
-    # install to /Applications
-    app = prefix/"tascar.app"
-    target = Pathname.new("/Applications/tascar.app")
-
-    # Create the relative symlink
-    ln_sf app, target
   end
 end
