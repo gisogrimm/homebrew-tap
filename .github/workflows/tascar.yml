@@ -15,8 +15,10 @@ jobs:
       run: git fetch --unshallow --tags
     - name: github-cmake workaround
       run: brew uninstall cmake
-    - name: trust
+    - name: lsl
       run: brew tap labstreaminglayer/tap
+    - name: trust
+      run: brew trust aws/tap labstreaminglayer/tap
     - name: installation
       run: brew install -v gisogrimm/tap/tascar
     - name: tascarversion
