@@ -16,7 +16,7 @@ jobs:
     - name: github-cmake workaround
       run: brew uninstall cmake
     - name: trust
-      run: brew trust labstreaminglayer/tap
+      run: brew tap labstreaminglayer/tap
     - name: installation
       run: brew install -v gisogrimm/tap/tascar
     - name: tascarversion
