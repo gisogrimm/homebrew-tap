@@ -1,5 +1,5 @@
 class Tascar < Formula
-  TASCAR_TAG = "r0.237.1_macos_lightctl_2"
+  TASCAR_TAG = "release_0.238.1"
   desc "Toolbox for Acoustic Scene Creation and Rendering (tascar)"
   homepage "https://tascar.org/"
   url "https://github.com/gisogrimm/tascar", :using => :git, :tag => TASCAR_TAG
